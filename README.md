@@ -30,6 +30,18 @@ Corriendo el fichero "main.py" ya tendrías el bot funcionando.
 
 Ahora puedes meter esto en un cron o donde quieras para que se ejecute diariamente a las 9:00 y a las 15:00 para que te actualice con los nuevos ofertados
 
+#### Bonus track: crontab
+Puedes automatizar la notificación si incluyes la ejecución de tu programa como un cron job en Linux. Para ello:
+1. Crea un script `sh` que ejecute el comando de python:
+    python3 /home/usuario/PADI-scrapper/main.py
+2. Dale permisos de ejecución
+    chmod +x padi_checker.sh
+3. Abre el editor de crontabs
+    crontab -e
+4. Añade esta línea. OJO a la ruta de tu fichero. Esta línea ejecutará el script todos los días de la semana (excepto fin de semana a las 9:10):
+    10 9 * * 1-5    /home/usuario/padi_checker.sh
+
+
 ## Bot ya publicado (en desarrollo)
 Existe un bot que se llama [¿Qué pasa PADI?](https://t.me/que_pasa_padi_bot)
 
