@@ -144,9 +144,9 @@ def main():
     for subject_name, subject_code in subjects_dict.items():
         # For every subject, I request the data from PADI
         all_results = fetch_data(subject_code)
-        new_records = process_all_results(all_results)
+        new_records = process_all_results(all_results, subject_name)
         for record in new_records:
-            aux_message += parse_response(record, subject_name) + '\n'
+            aux_message += parse_response(record) + '\n'
     if aux_message != '':
         final_message = "📚 *Nueva actualización de PADI*\n\n" + aux_message.replace('_', ' ')
         print(final_message)
