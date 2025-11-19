@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime, timedelta
 import config as vars
-from telegram_function import send_telegram_message
+from auxiliar_functions import send_telegram_message, get_telephone_ies
 import json
 import os
 
@@ -65,6 +65,7 @@ MESSAGE_TEMPLATE = (
     "📌 *Observaciones*: {observaciones}\n"
     "🗓️ *Hasta*: {hasta}\n"
     "⚠️ *Causa*: {causa}\n"
+    "📞 *Teléfono IES*: {telefono_ies}\n"
 )
 
 ########### FUNCTIONS ###########
@@ -82,7 +83,8 @@ def save_record(record, asignatura, file_path=file_tracker):
         "horario": record.get("dtipopuesto") or "JORNADA COMPLETA",
         "observaciones": record.get("observaciones", "").strip(),
         "hasta": record.get("fhasta", ""),
-        "causa": record.get("causa", "")
+        "causa": record.get("causa", ""),
+        "ccentro": record.get("ccentro", "")
     }
 
     with open(file_path, "a", encoding="utf-8") as f:
@@ -137,7 +139,11 @@ def parse_date(date_str):
     return(f"{d}/{m}/{y}")
 
 def parse_response(result_json):
+    print(result_json)
+    aux_telephone = get_telephone_ies(result_json.get("ccentro", ""))
+    result_json['telefono_ies'] = '[' + aux_telephone + '](tel:' + aux_telephone + ')'
     message = MESSAGE_TEMPLATE.format(**result_json)
+    # message = message.replace("{telefono_ies}", ))
     return(message)
 
 def fetch_data(subject_code):
