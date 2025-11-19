@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 import config as vars
 from telegram_function import send_telegram_message
 import json
@@ -29,8 +29,19 @@ headers = {
     'sec-ch-ua-platform': '"Windows"',
 }
 
+def fecha_segun_hora():
+    ahora = datetime.now()
+    limite = ahora.replace(hour=15, minute=0, second=0, microsecond=0)
+
+    if ahora < limite:
+        fecha = ahora.date()
+    else:
+        fecha = (ahora + timedelta(days=1)).date()
+
+    return fecha.strftime("%Y-%m-%d")
+
 json_data = {
-    'fcpublico': datetime.now().strftime('%Y-%m-%d'),
+    'fcpublico': fecha_segun_hora(),
     'cfunc': '0590107',
     'coddat': 'T',
     'itperfilacto': 'E',
