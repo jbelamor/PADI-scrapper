@@ -29,14 +29,24 @@ headers = {
     'sec-ch-ua-platform': '"Windows"',
 }
 
+from datetime import datetime, timedelta
+
 def fecha_segun_hora():
     ahora = datetime.now()
     limite = ahora.replace(hour=15, minute=0, second=0, microsecond=0)
 
+    # 1. Elegir fecha base según la hora
     if ahora < limite:
         fecha = ahora.date()
     else:
         fecha = (ahora + timedelta(days=1)).date()
+
+    # 2. Ajustar si cae en fin de semana
+    # weekday(): lunes=0 ... domingo=6
+    if fecha.weekday() == 5:  # sábado
+        fecha += timedelta(days=2)  # pasa a lunes
+    elif fecha.weekday() == 6:  # domingo
+        fecha += timedelta(days=1)  # pasa a lunes
 
     return fecha.strftime("%Y-%m-%d")
 
@@ -156,17 +166,27 @@ def fetch_data(subject_code):
     result = response.json()
     return(result)
 
-def main():
+def check_for_user(username):
+    user_info = vars.users.get(username)
+    # print(user_info)
     aux_message = ''
-    for subject_name, subject_code in subjects_dict.items():
+    for n in user_info["asignaturas"]:
         # For every subject, I request the data from PADI
+        subject_name = n['name']
+        subject_code = n['code']
         all_results = fetch_data(subject_code)
         new_records = process_all_results(all_results, subject_name)
+        # print(new_records)
         for record in new_records:
             aux_message += parse_response(record) + '\n'
     if aux_message != '':
         final_message = "📚 *Nueva actualización de PADI*\n\n" + aux_message.replace('_', ' ')
-        print(final_message)
-        res = send_telegram_message(vars.TOKEN, vars.CHAT_ID, final_message)
+        # print(final_message)
+        res = send_telegram_message(vars.TOKEN, user_info["user_id"], final_message)
+
+def main():
+    for username in vars.users.keys():
+        check_for_user(username)
+
 if __name__ == "__main__":
     main()
