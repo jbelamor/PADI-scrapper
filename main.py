@@ -57,11 +57,6 @@ json_data = {
     'itperfilacto': 'E',
 }
 
-subjects_dict = {
-    'INFORMÁTICA': '0590107',
-    'SISTEMAS Y APLICACIONES INFORMÁTICAS': '0590227',
-}
-
 request_URL = 'https://gestiona7.madrid.org/nsus_rest_ares/v1/ActosPublicosSustituciones/consultaNecesidades'
 
 ###########
