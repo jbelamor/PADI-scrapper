@@ -1,0 +1,571 @@
+{
+ "cuerpos": {
+  "0590": "PROFESORES DE ENSEÑANZA SECUNDARIA",
+  "0591": "PROFESORES TECNICOS DE FORMACION PROFESIONAL",
+  "0592": "PROFESORES DE ESCUELAS OFICIALES DE IDIOMAS",
+  "0593": "CATEDRATICOS DE MUSICA Y ARTES ESCENICAS",
+  "0594": "PROFESORES DE MUSICA Y ARTES ESCENICAS",
+  "0595": "PROFESORES DE ARTES PLASTICAS Y DISEÑO",
+  "0596": "MAESTROS DE TALLER DE ARTES PLASTICAS DISEÑO",
+  "0597": "MAESTROS",
+  "0598": "PROFESORES ESPECIALISTAS EN SECTORES SINGULARES DE FP"
+ },
+ "especialidades": {
+  "0590001": {
+   "cuerpo": "0590",
+   "name": "FILOSOFIA"
+  },
+  "0590002": {
+   "cuerpo": "0590",
+   "name": "GRIEGO"
+  },
+  "0590003": {
+   "cuerpo": "0590",
+   "name": "LATIN"
+  },
+  "0590004": {
+   "cuerpo": "0590",
+   "name": "LENGUA CASTELLANA Y LITERATURA"
+  },
+  "0590005": {
+   "cuerpo": "0590",
+   "name": "GEOGRAFIA E HISTORIA"
+  },
+  "0590006": {
+   "cuerpo": "0590",
+   "name": "MATEMATICAS"
+  },
+  "0590007": {
+   "cuerpo": "0590",
+   "name": "FISICA Y QUIMICA"
+  },
+  "0590008": {
+   "cuerpo": "0590",
+   "name": "BIOLOGIA Y GEOLOGIA"
+  },
+  "0590009": {
+   "cuerpo": "0590",
+   "name": "DIBUJO"
+  },
+  "0590010": {
+   "cuerpo": "0590",
+   "name": "FRANCES"
+  },
+  "0590011": {
+   "cuerpo": "0590",
+   "name": "INGLES"
+  },
+  "0590012": {
+   "cuerpo": "0590",
+   "name": "ALEMAN"
+  },
+  "0590016": {
+   "cuerpo": "0590",
+   "name": "MUSICA"
+  },
+  "0590017": {
+   "cuerpo": "0590",
+   "name": "EDUCACION FISICA"
+  },
+  "0590018": {
+   "cuerpo": "0590",
+   "name": "ORIENTACION EDUCATIVA"
+  },
+  "0590019": {
+   "cuerpo": "0590",
+   "name": "TECNOLOGIA"
+  },
+  "0590061": {
+   "cuerpo": "0590",
+   "name": "ECONOMIA"
+  },
+  "0590101": {
+   "cuerpo": "0590",
+   "name": "ADMINISTRACION DE EMPRESAS"
+  },
+  "0590102": {
+   "cuerpo": "0590",
+   "name": "ANALISIS Y QUIMICA INDUSTRIAL"
+  },
+  "0590103": {
+   "cuerpo": "0590",
+   "name": "ASESORIA Y PROCESOS DE IMAGEN PERSONAL"
+  },
+  "0590104": {
+   "cuerpo": "0590",
+   "name": "CONSTRUCCIONES CIVILES Y EDIFICACION"
+  },
+  "0590105": {
+   "cuerpo": "0590",
+   "name": "FORMACION Y ORIENTACION LABORAL"
+  },
+  "0590106": {
+   "cuerpo": "0590",
+   "name": "HOSTELERIA Y TURISMO"
+  },
+  "0590107": {
+   "cuerpo": "0590",
+   "name": "INFORMATICA"
+  },
+  "0590108": {
+   "cuerpo": "0590",
+   "name": "INTERVENCION SOCIOCOMUNITARIA"
+  },
+  "0590110": {
+   "cuerpo": "0590",
+   "name": "ORGANIZACION Y GESTION COMERCIAL"
+  },
+  "0590111": {
+   "cuerpo": "0590",
+   "name": "ORGANIZACION Y PROCESOS DE MANTENIMIENTO DE VEHICULOS"
+  },
+  "0590112": {
+   "cuerpo": "0590",
+   "name": "ORGANIZACION Y PROYECTOS DE FABRICACION MECANICA"
+  },
+  "0590113": {
+   "cuerpo": "0590",
+   "name": "ORGANIZACION Y PROYECTOS DE SISTEMAS ENERGETICOS"
+  },
+  "0590115": {
+   "cuerpo": "0590",
+   "name": "PROCESOS DE PRODUCCION AGRARIA"
+  },
+  "0590117": {
+   "cuerpo": "0590",
+   "name": "PROCESOS DIAGNOSTICOS CLINICOS Y PRODUCTOS ORTOPROTESICOS"
+  },
+  "0590118": {
+   "cuerpo": "0590",
+   "name": "PROCESOS SANITARIOS"
+  },
+  "0590119": {
+   "cuerpo": "0590",
+   "name": "PROCESOS Y MEDIOS DE COMUNICACION"
+  },
+  "0590120": {
+   "cuerpo": "0590",
+   "name": "PROCESOS Y PRODUCTOS DE TEXTIL, CONFECCION Y PIEL"
+  },
+  "0590122": {
+   "cuerpo": "0590",
+   "name": "PROCESOS Y PRODUCTOS EN ARTES GRAFICAS"
+  },
+  "0590123": {
+   "cuerpo": "0590",
+   "name": "PROCESOS Y PRODUCTOS EN MADERA Y MUEBLE"
+  },
+  "0590124": {
+   "cuerpo": "0590",
+   "name": "SISTEMAS ELECTRONICOS"
+  },
+  "0590125": {
+   "cuerpo": "0590",
+   "name": "SISTEMAS ELECTROTECNICOS Y AUTOMATICOS"
+  },
+  "0590205": {
+   "cuerpo": "0590",
+   "name": "INSTALACIÓN Y MANTENIMIENTO DE EQUIPOS TÉRMICOS Y DE FLUIDOS"
+  },
+  "0590206": {
+   "cuerpo": "0590",
+   "name": "INSTALACIONES ELECTROTÉCNICAS"
+  },
+  "0590208": {
+   "cuerpo": "0590",
+   "name": "LABORATORIO"
+  },
+  "0590212": {
+   "cuerpo": "0590",
+   "name": "OFICINA DE PROYECTOS DE CONSTRUCCIÓN"
+  },
+  "0590214": {
+   "cuerpo": "0590",
+   "name": "OPERACIONES Y EQUIPOS DE ELABORACION DE PRODUCTOS ALIMENTARIOS"
+  },
+  "0590215": {
+   "cuerpo": "0590",
+   "name": "OPERACIONES DE PROCESOS"
+  },
+  "0590216": {
+   "cuerpo": "0590",
+   "name": "OPERACIONES Y EQUIPOS DE PRODUCCION AGRARIA"
+  },
+  "0590219": {
+   "cuerpo": "0590",
+   "name": "PROCEDIMIENTOS DE DIAGNOSTICO CLINICO Y ORTOPROTESICO"
+  },
+  "0590220": {
+   "cuerpo": "0590",
+   "name": "PROCEDIMIENTOS SANITARIOS Y ASISTENCIALES"
+  },
+  "0590221": {
+   "cuerpo": "0590",
+   "name": "PROCESOS COMERCIALES"
+  },
+  "0590222": {
+   "cuerpo": "0590",
+   "name": "PROCESOS DE GESTION ADMINISTRATIVA"
+  },
+  "0590225": {
+   "cuerpo": "0590",
+   "name": "SERVICIOS A LA COMUNIDAD"
+  },
+  "0590227": {
+   "cuerpo": "0590",
+   "name": "SISTEMAS Y APLICACIONES INFORMATICAS"
+  },
+  "0590229": {
+   "cuerpo": "0590",
+   "name": "TECNICAS Y PROCEDIMIENTOS DE IMAGEN Y SONIDO"
+  },
+  "0590231": {
+   "cuerpo": "0590",
+   "name": "EQUIPOS ELECTRONICOS"
+  },
+  "0590819": {
+   "cuerpo": "0590",
+   "name": "GEOGRAFIA E HISTORIA/FRANCES"
+  },
+  "0590820": {
+   "cuerpo": "0590",
+   "name": "GEOGRAFIA E HISTORIA/INGLES"
+  },
+  "0590823": {
+   "cuerpo": "0590",
+   "name": "BIOLOGIA Y GEOLOGIA/INGLES"
+  },
+  "0590826": {
+   "cuerpo": "0590",
+   "name": "FISICA Y QUIMICA/INGLES"
+  },
+  "0590829": {
+   "cuerpo": "0590",
+   "name": "DIBUJO/INGLES"
+  },
+  "0590831": {
+   "cuerpo": "0590",
+   "name": "MUSICA/FRANCES"
+  },
+  "0590832": {
+   "cuerpo": "0590",
+   "name": "MUSICA/INGLES"
+  },
+  "0590834": {
+   "cuerpo": "0590",
+   "name": "EDUCACION FISICA/FRANCES"
+  },
+  "0590835": {
+   "cuerpo": "0590",
+   "name": "EDUCACION FISICA/INGLES"
+  },
+  "0590838": {
+   "cuerpo": "0590",
+   "name": "TECNOLOGIA/INGLES"
+  },
+  "0590840": {
+   "cuerpo": "0590",
+   "name": "FILOSOFIA/FRANCES"
+  },
+  "0590841": {
+   "cuerpo": "0590",
+   "name": "INGLES/INGLES AVANZADO"
+  },
+  "0590857": {
+   "cuerpo": "0590",
+   "name": "FORMACIÓN Y ORIENTACIÓN LABORAL / INGLÉS"
+  },
+  "0591021": {
+   "cuerpo": "0591",
+   "name": "TALLER DE VIDRIO Y CERAMICA"
+  },
+  "0591206": {
+   "cuerpo": "0591",
+   "name": "INSTALACIONES ELECTROTECNICAS"
+  },
+  "0592001": {
+   "cuerpo": "0592",
+   "name": "ALEMAN"
+  },
+  "0592002": {
+   "cuerpo": "0592",
+   "name": "ARABE"
+  },
+  "0592004": {
+   "cuerpo": "0592",
+   "name": "CHINO"
+  },
+  "0592005": {
+   "cuerpo": "0592",
+   "name": "DANES"
+  },
+  "0592006": {
+   "cuerpo": "0592",
+   "name": "ESPAÑOL"
+  },
+  "0592008": {
+   "cuerpo": "0592",
+   "name": "FRANCES"
+  },
+  "0592011": {
+   "cuerpo": "0592",
+   "name": "INGLES"
+  },
+  "0592012": {
+   "cuerpo": "0592",
+   "name": "ITALIANO"
+  },
+  "0592013": {
+   "cuerpo": "0592",
+   "name": "JAPONES"
+  },
+  "0592015": {
+   "cuerpo": "0592",
+   "name": "PORTUGUES"
+  },
+  "0592019": {
+   "cuerpo": "0592",
+   "name": "FINES"
+  },
+  "0593010": {
+   "cuerpo": "0593",
+   "name": "COMPOSICION"
+  },
+  "0593051": {
+   "cuerpo": "0593",
+   "name": "MUSICOLOGIA"
+  },
+  "0593058": {
+   "cuerpo": "0593",
+   "name": "PERCUSION"
+  },
+  "0593063": {
+   "cuerpo": "0593",
+   "name": "REPERTORIO CON PIANO PARA VOZ"
+  },
+  "0593093": {
+   "cuerpo": "0593",
+   "name": "INSTRUMENTOS DE PÚA"
+  },
+  "0593098": {
+   "cuerpo": "0593",
+   "name": "REPERTORIO CON PIANO PARA INSTRUMENTOS"
+  },
+  "0593114": {
+   "cuerpo": "0593",
+   "name": "TECNOLOGÍAS APLICADAS A LA DANZA"
+  },
+  "0594404": {
+   "cuerpo": "0594",
+   "name": "CLARINETE"
+  },
+  "0594406": {
+   "cuerpo": "0594",
+   "name": "CONTRABAJO"
+  },
+  "0594410": {
+   "cuerpo": "0594",
+   "name": "FLAUTA TRAVESERA"
+  },
+  "0594412": {
+   "cuerpo": "0594",
+   "name": "FUNDAMENTOS DE COMPOSICION"
+  },
+  "0594418": {
+   "cuerpo": "0594",
+   "name": "INSTRUMENTOS DE PUA"
+  },
+  "0594423": {
+   "cuerpo": "0594",
+   "name": "PIANO"
+  },
+  "0594424": {
+   "cuerpo": "0594",
+   "name": "SAXOFON"
+  },
+  "0594429": {
+   "cuerpo": "0594",
+   "name": "TUBA"
+  },
+  "0594431": {
+   "cuerpo": "0594",
+   "name": "VIOLA"
+  },
+  "0594433": {
+   "cuerpo": "0594",
+   "name": "VIOLIN"
+  },
+  "0594434": {
+   "cuerpo": "0594",
+   "name": "VIOLONCELLO"
+  },
+  "0594437": {
+   "cuerpo": "0594",
+   "name": "DANZA CONTEMPORANEA"
+  },
+  "0594438": {
+   "cuerpo": "0594",
+   "name": "FLAMENCO"
+  },
+  "0594441": {
+   "cuerpo": "0594",
+   "name": "CANTO APLICADO AL ARTE DRAMATICO"
+  },
+  "0594444": {
+   "cuerpo": "0594",
+   "name": "DICCION Y EXPRESION ORAL"
+  },
+  "0594445": {
+   "cuerpo": "0594",
+   "name": "DIRECCION ESCENICA"
+  },
+  "0594451": {
+   "cuerpo": "0594",
+   "name": "INTERPRETACION"
+  },
+  "0594456": {
+   "cuerpo": "0594",
+   "name": "TECNICAS ESCENICAS"
+  },
+  "0594460": {
+   "cuerpo": "0594",
+   "name": "LENGUAJE MUSICAL"
+  },
+  "0594465": {
+   "cuerpo": "0594",
+   "name": "CANTE FLAMENCO"
+  },
+  "0595503": {
+   "cuerpo": "0595",
+   "name": "CONSERVACION Y RESTAURACION DE OBRAS ESCULTORICAS"
+  },
+  "0595507": {
+   "cuerpo": "0595",
+   "name": "DIBUJO ARTISTICO Y COLOR"
+  },
+  "0595510": {
+   "cuerpo": "0595",
+   "name": "DISEÑO DE MODA"
+  },
+  "0595512": {
+   "cuerpo": "0595",
+   "name": "DISEÑO GRAFICO"
+  },
+  "0595515": {
+   "cuerpo": "0595",
+   "name": "FOTOGRAFIA"
+  },
+  "0595516": {
+   "cuerpo": "0595",
+   "name": "HISTORIA DEL ARTE"
+  },
+  "0595522": {
+   "cuerpo": "0595",
+   "name": "MEDIOS INFORMATICOS"
+  },
+  "0595523": {
+   "cuerpo": "0595",
+   "name": "ORGANIZACION INDUSTRIAL Y LEGISLACION"
+  },
+  "0596602": {
+   "cuerpo": "0596",
+   "name": "BORDADOS Y ENCAJES"
+  },
+  "0596603": {
+   "cuerpo": "0596",
+   "name": "COMPLEMENTOS Y ACCESORIOS"
+  },
+  "0596613": {
+   "cuerpo": "0596",
+   "name": "TECNICAS CERAMICAS"
+  },
+  "0597001": {
+   "cuerpo": "0597",
+   "name": "PRIMARIA / INGLÉS"
+  },
+  "0597002": {
+   "cuerpo": "0597",
+   "name": "EDUCACIÓN INFANTIL / INGLÉS"
+  },
+  "0597003": {
+   "cuerpo": "0597",
+   "name": "MÚSICA / INGLÉS"
+  },
+  "0597004": {
+   "cuerpo": "0597",
+   "name": "EDUCACIÓN FÍSICA / INGLÉS"
+  },
+  "0597005": {
+   "cuerpo": "0597",
+   "name": "INGLÉS / INGLÉS"
+  },
+  "0597AL": {
+   "cuerpo": "0597",
+   "name": "EDUCACIÓN ESPECIAL, AUDICIÓN Y LENGUAJE"
+  },
+  "0597EF": {
+   "cuerpo": "0597",
+   "name": "EDUCACIÓN FÍSICA"
+  },
+  "0597EI": {
+   "cuerpo": "0597",
+   "name": "EDUCACIÓN INFANTIL"
+  },
+  "0597FI": {
+   "cuerpo": "0597",
+   "name": "LENGUA  EXTRANJERA: INGLÉS"
+  },
+  "0597FR": {
+   "cuerpo": "0597",
+   "name": "LENGUA EXTRANJERA: FRANCÉS"
+  },
+  "0597MU": {
+   "cuerpo": "0597",
+   "name": "MÚSICA"
+  },
+  "0597PRI": {
+   "cuerpo": "0597",
+   "name": "EDUCACIÓN PRIMARIA"
+  },
+  "0597PT": {
+   "cuerpo": "0597",
+   "name": "EDUCACIÓN ESPECIAL, PEDAGOGÍA TERAPEÚTICA"
+  },
+  "0598001": {
+   "cuerpo": "0598",
+   "name": "COCINA Y PASTELERIA"
+  },
+  "0598002": {
+   "cuerpo": "0598",
+   "name": "ESTETICA"
+  },
+  "0598003": {
+   "cuerpo": "0598",
+   "name": "FABRICACION E INSTALACION DE CARPINTERIA Y MUEBLE"
+  },
+  "0598004": {
+   "cuerpo": "0598",
+   "name": "MANTENIMIENTO DE VEHICULOS"
+  },
+  "0598005": {
+   "cuerpo": "0598",
+   "name": "MECANIZADO Y MANTENIMIENTO DE MAQUINAS"
+  },
+  "0598007": {
+   "cuerpo": "0598",
+   "name": "PELUQUERIA"
+  },
+  "0598008": {
+   "cuerpo": "0598",
+   "name": "PRODUCCION EN ARTES GRAFICAS"
+  },
+  "0598009": {
+   "cuerpo": "0598",
+   "name": "SERVICIOS DE RESTAURACION"
+  },
+  "0598010": {
+   "cuerpo": "0598",
+   "name": "SOLDADURA"
+  }
+ }
+}

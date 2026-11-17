@@ -1,50 +1,51 @@
 # PADI-scrapper
-Este repositorio es un bot de Telegram que obtiene los resultados de PADI (https://gestiona.comunidad.madrid/padi/#!/main-menu) y te notifica de los nuevos puestos que se han ofertado.
+Bot de Telegram que vigila [PADI](https://gestiona.comunidad.madrid/padi/#!/main-menu) (actos públicos de sustituciones docentes de la Comunidad de Madrid) y avisa de las plazas nuevas.
 
-La primera vez que se ejecuta te notifica de todos los que existen. A partir de ahí, va guardando los resultados en un fichero que usa como histórico y sólo te va notificando de los nuevos resultados que vayan apareciendo.
+Cada usuario lo configura todo desde el propio chat, sin tocar ficheros:
 
-# Uso
-## En local
-Para poder correr tu propio instancia de este bot necesitas dos cosas:
-1. El token de tu propio bot
-2. El chat id de tu conversación con el bot
+- **Especialidades**: escribe el nombre (o un trozo, sin preocuparte de tildes: `informatica`, `ingles`, `infantil`) o el código (`0590107`) y pulsa para marcar ✅ o desmarcar. También puedes explorar la lista por cuerpo (Secundaria, Maestros, FP, EOI...).
+- **Ubicación**: comparte tu ubicación GPS o escribe una dirección, municipio o código postal. A partir de ahí cada plaza muestra la distancia estimada al centro (en línea recta, aproximación por carretera y tiempo en coche) y un enlace «Cómo llegar».
+- **Plazas abiertas** (`/plazas` o el botón 📋): consulta en ese momento todas las plazas de tus especialidades, ordenadas de la más cercana a la más lejana.
+- **Radio** (`/radio`): solo te avisa de los centros que estén a menos de X km.
+- **Ajustes** (`/ajustes`): activar o desactivar alertas, tipo de acto (extraordinario, ordinario o ambos) y borrar tus datos.
 
-### Bot token
-Existen mil tutoriales sobre cómo hacer esto, aquí la documentación oficial [Telegram - BotFather](https://core.telegram.org/bots/tutorial)
+Al añadir una especialidad no te llegan de golpe todas las plazas que ya estaban publicadas (esas se ven en `/plazas`); solo te avisa de las nuevas.
 
-### Chat ID
-Una vez que hayas creado tu bot, inicia una conversación con él y dale a START.
-Después, desde el navegador ve a la dirección 'https://api.telegram.org/bot<BOT_TOKEN>/getUpdates' sustitutendo donde pone "<BOT_TOKEN>" con el token que has obtenido en el paso anterior.
+## Puesta en marcha
+1. Crea un bot con [BotFather](https://core.telegram.org/bots/tutorial) y copia el token.
+2. `pip install -r requirements.txt`
+3. Copia `my_config.py` como `config.py` y pon tu `TOKEN`.
+4. `python main.py`
 
-    "ok":true,"result":[{"update_id":00000000,
-    "message":{"message_id":1,"from":{"id":XXXXXXXXX, ...
+El bot queda escuchando a los usuarios y además consulta PADI cada 30 minutos en días laborables, de 8:00 a 21:00. Se puede cambiar en `config.py` (`CHECK_EVERY_MINUTES`, `CHECK_HOURS`, `CHECK_WEEKENDS`).
 
-El número que verás donde pone "XXXXXXX" es el chat ID de tu conversación con tu bot.
+Si prefieres lanzar las comprobaciones desde cron en vez de dejar el bot corriendo:
 
-### Config
-1. Cambia el nombre al fichero "my_config.py" por "config.py"
-2. Sustituye los valores por los nuevos valores que has generado en los pasos anteriores
+    python main.py --check
 
-### Ejecuta
-Corriendo el fichero "main.py" ya tendrías el bot funcionando. 
+Ten en cuenta que en ese modo el bot no responde a los usuarios, así que para que puedan configurarse tiene que estar corriendo `python main.py` en algún sitio.
 
-Ahora puedes meter esto en un cron o donde quieras para que se ejecute diariamente a las 9:00 y a las 15:00 para que te actualice con los nuevos ofertados
+### Migración desde la versión anterior
+Si tu `config.py` todavía tiene el diccionario `users` del formato antiguo, en el primer arranque esos usuarios y sus asignaturas se importan solos a la base de datos (`padi.db`). Después ya se gestionan desde el bot.
 
-#### Bonus track: crontab
-Puedes automatizar la notificación si incluyes la ejecución de tu programa como un cron job en Linux. Para ello:
-1. Crea un script `sh` que ejecute el comando de python:
-    python3 /home/usuario/PADI-scrapper/main.py
-2. Dale permisos de ejecución
-    chmod +x padi_checker.sh
-3. Abre el editor de crontabs
-    crontab -e
-4. Añade esta línea. OJO a la ruta de tu fichero. Esta línea ejecutará el script todos los días de la semana (excepto fin de semana a las 9:10):
-    10 9 * * 1-5    /home/usuario/padi_checker.sh
+## Datos
+- `data/especialidades.json`: catálogo de cuerpos y especialidades, sacado de las publicaciones de PADI. El bot lo amplía solo cada día si aparece alguna especialidad nueva.
+- `data/centros.json`: centros públicos de la Comunidad de Madrid ([datos abiertos](https://datos.comunidad.madrid/dataset/centros_educativos)) con dirección, teléfono y coordenadas. Si a un centro le faltan coordenadas, se geocodifica con OpenStreetMap (Nominatim) y se guarda en caché.
 
+Para regenerarlos:
 
-## Bot ya publicado (en desarrollo)
-Existe un bot que se llama [¿Qué pasa PADI?](https://t.me/que_pasa_padi_bot)
+    python tools/actualizar_datos.py
 
-La idea es que puedas definir qué asignatura te interesa consultar y definir los filtros que te interesen y el bot te informará de ello.
-
-De momento no pienso seguir trabajando en esta línea, pero si suficientes personas me lo piden, lo desarrollo.
+## Estructura
+```
+main.py              punto de entrada (bot o --check)
+padi/api.py          cliente de la API de PADI
+padi/service.py      plazas por usuario, distancias y detección de novedades
+padi/bot.py          comandos, botones y bucle de alertas de Telegram
+padi/catalog.py      catálogo de especialidades y directorio de centros
+padi/geo.py          UTM a lat/lon, distancias y geocodificación
+padi/storage.py      SQLite (usuarios, suscripciones, plazas ya avisadas)
+padi/messages.py     formato de los mensajes
+tools/               regeneración de los ficheros de data/
+legacy/              código y datos de la versión anterior (ya no se usan)
+```
